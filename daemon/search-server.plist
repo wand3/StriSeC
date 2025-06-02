@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>search-server</string>
+
+    <key>ProgramArguments</key>
+     <array>
+        <string>/usr/local/bin/python3</string>
+        <string>-m</string> <!-- Run as module -->
+        <string>src.server</string> <!-- Module path -->
+        <string>-c</string>
+        <string>config/server_config.ini</string> <!-- Path relative to WorkingDirectory -->
+    </array>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/user/Desktop/Projects/Intoductory-Task-AS-SE/</string>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+        <!-- Add PYTHONPATH to include project root -->
+        <key>PYTHONPATH</key>
+        <string>/Users/user/Desktop/Projects/Intoductory-Task-AS-SE</string>
+    </dict>
+
+    <key>RunAtLoad</key>
+    <true/> <!-- Start when the daemon loads -->
+
+    <key>KeepAlive</key>
+    <true/> <!-- Restart if the process crashes -->
+
+    <key>StandardOutPath</key>
+    <string>/tmp/search-server.out.log</string> <!-- Logs -->
+    <key>StandardErrorPath</key>
+    <string>/tmp/search-server.err.log</string>
+
+
+</dict>
+</plist>

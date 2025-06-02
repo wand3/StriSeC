@@ -1,0 +1,23 @@
+[Unit]
+Description=Text Search Server
+After=network.target
+
+[Service]
+Type=simple
+User=user
+WorkingDirectory=/home/user/Intoductory-Task-AS-SE
+ExecStart=/home/user/Intoductory-Task-AS-SE/venv/bin/python -m src.server -c /home/user/Intoductory-Task-AS-SE/config/server_config.ini
+Restart=always
+RestartSec=5s
+Environment="PYTHONPATH=/home/user/Intoductory-Task-AS-SE"
+
+
+# Log configuration - separate files for output and errors
+StandardOutput=file:/var/log/search-server/output.log
+StandardError=file:/var/log/search-server/error.log
+
+# File creation permissions (systemd v240+)
+LogFileMode=0644
+
+[Install]
+WantedBy=multi-user.target
