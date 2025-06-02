@@ -1,6 +1,17 @@
-# Secure String-Search TCP Server
+# StriSeC — String Search Core
 
-This project implements a secure, multithreaded string-search TCP server with optional SSL/TLS encryption and configurable payload limits.
+**StriSeC** is a high-performance, secure, multithreaded string search server written in Python.  
+It implements a secure, multithreaded string-search TCP server with optional SSL/TLS encryption and configurable payload limits, Automated robust testing for benchmarking algorithms, daemon processes for MacOS and LINUX, client-server communication for use in automated data validation, scanning, or secure query environments.
+
+## 🚀 Features
+
+- 🔒 **SSL/TLS support** with client certificate validation
+- ⚡ **Multithreaded TCP server** for high-concurrency query handling
+- 🧠 **Pluggable search algorithms** (`dynamic`, `regex`, `mmap`, `linecache`, `grep`, etc.)
+- 🧪 **Full test suite** with `pytest`, including malformed queries, stress test, disconnects, and cert validation
+- 📂 **Configurable via INI file** — runtime paths, SSL settings, logging, and behavior
+- 🧰 Designed for **Linux/ MacOS environments**, works in containers and headless systems
+
 
 ## Prerequisites
 
