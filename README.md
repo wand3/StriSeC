@@ -121,3 +121,25 @@ You should receive either STRING EXISTS or STRING NOT FOUND.
    journalctl -u search-server -f
    ```
 
+## Steps (To run Server as a Mac Daemon)
+
+1. Create a LaunchAgent Service File
+    ``` bash
+   sudo cp daemon/search-server.plist ~/Library/LaunchAgents/search-server.plist
+   chmod 644 ~/Library/LaunchAgents/search-server.plist
+   chown $(whoami) ~/Library/LaunchAgents/search-server.plist
+   ```
+2. Reload launchctl
+    ``` bash
+    launchctl unload ~/Library/LaunchAgents/search-server.plist
+    launchctl bootstrap gui/$UID ~/Library/LaunchAgents/search-server.plist   
+   ```
+3. Load/Unload Service
+    ``` bash
+    sudo launchctl unload search-server
+    sudo launchctl load search-server 
+    ```
+4. Check Status / view logs
+    ```
+   sudo launchctl status search-server
+   ```
