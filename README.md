@@ -1,4 +1,4 @@
-# StriSeC — String Search Core
+# StriSeC (String Search Core)
 
 **StriSeC** is a high-performance, secure, multithreaded string search server written in Python.  
 It implements a secure, multithreaded string-search TCP server with optional SSL/TLS encryption and configurable payload limits, Automated robust testing for benchmarking algorithms, daemon processes for MacOS and LINUX, client-server communication for use in automated data validation, scanning, or secure query environments.
